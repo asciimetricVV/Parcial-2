@@ -12,13 +12,29 @@ while True:
     else:
         print("Ingrese numero correcto")
 
-horastot=int(input("Inserte cantidad de horas de uso de maquinaria: "))
-
-maquican=int(input("Cuantas maquinas planea usar?: "))
+while True:
+    horastot=input("Inserte cantidad de horas de uso de maquinaria: ")
+    if horastot.isdigit():
+        horastot=int(horastot)
+        break
+    else:
+        print("Insertar numero correcto")
+while True:
+    maquican=input("Cuantas maquinas planea usar?: ")
+    if maquican.isdigit():
+        maquican=int(maquican)
+        break
+    else:
+        print("No es un numero!!!!")
 loop=0
+maqval1=0
+maqval2=0
+maqval3=0
+maqtot=int(0)
+horasc=int()
 while loop<maquican:
     
-    maqtot=int()
+   
     maqval=int(maqtot)
     
     if maquican==loop :
@@ -26,24 +42,30 @@ while loop<maquican:
     loop=loop+1
     while True:
         maq=input(f"Ingrese maquina {loop} A.-Excavadora B.-Grua C.- Mezcladora : ").upper()
-        if maq=="A" or "B" or "C":
+        if maq=="A" or maq=="B" or maq=="C":
             break
         
         else :
             print("Error al seleccionar")
 
     
-    horasc=int()
-    horas=int(input("Ingrese cantidad de horas a usar: "))
+    while True:
+        horas=input("Ingrese cantidad de horas a usar: ")
+        if horas.isdigit():
+            horas=int(horas)
+            break
+        else:
+            print("Insertar hora adecuada")
+        
     horasc=0+horas
     
     if horastot<=horasc:
         print("Horas maximas alcanzadas")
     if maq=="A":
-       maqval=200000*horas
+        maqval1=200000*horas
     elif maq=="B":
-        maqval=250000*horas
+        maqval2=250000*horas
     elif maq=="C":
-        maqval=150000*horas
-maqtot=0+maqval
+        maqval3=150000*horas
+maqtot=0+maqval1+maqval2+maqval3
 print(maqtot)    
