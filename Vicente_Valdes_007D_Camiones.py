@@ -14,9 +14,9 @@ while True:
 
 horastot=int(input("Inserte cantidad de horas de uso de maquinaria: "))
 
-maquican=input("Cuantas maquinas planea usar?: ")
+maquican=int(input("Cuantas maquinas planea usar?: "))
 loop=0
-while True:
+while loop<maquican:
     
     maqtot=int()
     maqval=int(maqtot)
@@ -40,9 +40,10 @@ while True:
     if horastot<=horasc:
         print("Horas maximas alcanzadas")
     if maq=="A":
-        maqtot=maqval+200000*horas
+       maqval=200000*horas
     elif maq=="B":
-        maqtot=maqval+250000*horas
+        maqval=250000*horas
     elif maq=="C":
-        maqtot=maqval+150000*horas
+        maqval=150000*horas
+maqtot=0+maqval
 print(maqtot)    
