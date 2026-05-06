@@ -12,8 +12,10 @@ while num1>=num2:
 numero=1
 numero1=2
 numero2=3
-
+intento=0
 while True:
+   
+    intento=intento+1
     print("_______________________")
     numero=0
     numero1=0
@@ -25,10 +27,22 @@ while True:
     print(numero,numero1,numero2)
     
     print("_______________________")
+    print(f"Llevas {intento} intentos")
+    if intento>=10:
+        print("MALISIMO")
+    if intento>=20:
+        print("Horrible")    
     if numero==numero1==numero2:
         print("GANASTE!!!!!!!!!!!!!!!!!")
         break
     sn=input("Desea continuar? S/N: ").upper()
+    if sn=="S" and intento==15:
+        sn1=input("SEGURO?????: ").upper()
+        if sn1=="N":
+            print("Saliendo...")
+            break
     if sn=="N":
         print("Saliendo...")
         break
+    
+   
